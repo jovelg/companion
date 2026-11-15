@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exchange Companion</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Exchange Companion</h1>
+
+    <label class="check">
+      <input type="checkbox" id="enabled" />
+      <span>Enable Extension</span>
+    </label>
+
+    <div class="field">
+      <label for="format">Odds Format:</label>
+      <select id="format"></select>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="showBook" />
+      <span>Show on Order Book</span>
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="showButtons" />
+      <span>Show on Outcome Buttons</span>
+    </label>
+
+    <hr />
+
+    <section data-site="polyus">
+      <label class="check heading">
+        <input type="checkbox" id="polyusEnabled" />
+        <span>Polymarket US</span>
+      </label>
+      <div class="field">
+        <label for="polyusTier">Taker Tier:</label>
+        <select id="polyusTier"></select>
+      </div>
+    </section>
+
+    <section data-site="kalshi">
+      <label class="check heading">
+        <input type="checkbox" id="kalshiEnabled" />
+        <span>Kalshi</span>
+      </label>
+      <div class="field">
+        <label for="kalshiFee">Fee Rate:</label>
+        <select id="kalshiFee"></select>
+      </div>
+    </section>
+
+    <section data-site="prophetx">
+      <label class="check heading">
+        <input type="checkbox" id="prophetxEnabled" />
+        <span>ProphetX</span>
+      </label>
+      <div class="field">
+        <label for="prophetxModel">Fee Model:</label>
+        <select id="prophetxModel"></select>
+      </div>
+    </section>
+
+    <p class="note">
+      Asks show price + fee (cost to buy); bids show price − fee (proceeds to sell). ProphetX
+      prices show the break-even probability after its fee on winnings. Hover any quote for the
+      math.
+    </p>
+
+    <hr />
+
+    <footer>Open source. Independent third-party extension.</footer>
+
+    <script src="../src/shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

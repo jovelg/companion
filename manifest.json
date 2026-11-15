@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Exchange Companion",
+  "version": "1.1.0",
+  "description": "Fee-adjusted taker prices and American odds for order-book levels and outcome buttons on Polymarket US, Kalshi and ProphetX.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://polymarket.us/*",
+        "https://*.polymarket.us/*",
+        "https://kalshi.com/*",
+        "https://*.kalshi.com/*",
+        "https://prophetx.co/*",
+        "https://*.prophetx.co/*"
+      ],
+      "js": ["src/shared.js", "src/bridge.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://polymarket.us/*",
+        "https://*.polymarket.us/*",
+        "https://kalshi.com/*",
+        "https://*.kalshi.com/*",
+        "https://prophetx.co/*",
+        "https://*.prophetx.co/*"
+      ],
+      "js": ["src/shared.js", "src/main.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+:root {
+  --accent: #1f9d6b;
+  --text: #2b2f36;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 340px;
+  margin: 0;
+  padding: 18px 22px 14px;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+h1 {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 14px 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.check input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.field label {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+select {
+  width: 100%;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+select:focus-visible {
+  box-shadow: 0 0 0 3px rgb(31 157 107 / 20%);
+}
+
+.note {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+section {
+  margin: 6px 0 12px;
+}
+
+.check.heading {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+section.off .field,
+body.off .field,
+body.off section,
+body.off .check:not(:first-of-type) {
+  opacity: 0.45;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
